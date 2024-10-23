@@ -1,0 +1,11 @@
+interface risk-engine-handler {    
+    use types.{
+      ddelta-request,  
+      ddelta-response,
+      fit-request,
+      fit-response
+    };
+    
+    ddelta: func(request: ddelta-request) -> result<ddelta-response, string>;
+    fit: func(request: fit-request) -> result<fit-response, string>;
+  }

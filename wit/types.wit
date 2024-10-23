@@ -1,0 +1,37 @@
+interface types {
+
+  record ddelta-request {
+    currency: string,
+  }
+
+  record ddelta-response {
+    bumps: list<bump>
+  }
+
+  record bump {
+    bump-name: string,
+    spot: f64,
+    total: f64,
+    instruments: list<instrument>
+  }
+
+  record instrument{
+    instrument-name: string,
+    value: f64
+  }
+
+  record fit-request{
+    calendar-weight: list<f64>,
+    date-index: list<u64>,
+    atm-vol: list<f64>,
+    overnight: f64
+  }
+
+  record fit-response{
+    initial: f64,
+    meanrev: f64, 
+    decay: f64,
+    loss: f64,
+    data: list<f64>
+  }
+}
