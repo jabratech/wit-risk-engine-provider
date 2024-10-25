@@ -3,9 +3,13 @@ interface risk-engine-handler {
       ddelta-request,  
       ddelta-response,
       fit-request,
-      fit-response
+      fit-response,
+      sabr-greeks,
+      sabr-volatility-summary
     };
     
     ddelta: func(request: ddelta-request) -> result<ddelta-response, string>;
     fit: func(request: fit-request) -> result<fit-response, string>;
+    calibrate-sabr: func(request: list<tuple<string, f64, f64>>) -> result<sabr-greeks, string>;
+    sabr-vol-summary: func(request: list<tuple<string, f64, f64>>, alpha: f64, rho: f64, nu: f64, delta: f64) -> result<sabr-volatility-summary, string>;
   }
