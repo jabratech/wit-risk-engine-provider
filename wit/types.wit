@@ -43,8 +43,11 @@ interface types {
 
   record sabr-volatility {
     expiry: string,
-    forward-price: f64,
     market-vol: f64,
+    strike-call: f64,
+    call-vol: f64,
+    strike-put: f64,
+    put-vol: f64,
     rr: f64,
     bf: f64
   }
