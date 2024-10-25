@@ -32,7 +32,8 @@ interface types {
     meanrev: f64, 
     decay: f64,
     loss: f64,
-    data: list<f64>
+    data: list<f64>,
+    weights: list<f64>,
   }
 
   record sabr-greeks {
